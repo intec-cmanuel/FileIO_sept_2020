@@ -1,0 +1,15 @@
+2 opties:
+
+Exception gebruiken:
+    - Als het 2de food exception veroorzaakt
+        -> we zijn onze eerste food kwijt.
+
+Without Exception:
+    - Exception useless
+        -> User does not know.
+
+
+2 Solution:
+
+    -> order cancelled
+    -> order edited

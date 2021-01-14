@@ -25,7 +25,11 @@ public class Order {
     } 
 
     public void applyDiscount(double percent) {
-        percentDiscount = percent;
+        if (percent > 0 && percent <= 100) {
+            percentDiscount = percent;
+        } else {
+            // TODO handle Incorrect Percentage.
+        }
     } 
 
     public double getTotalPrice(){ 
@@ -38,5 +42,15 @@ public class Order {
         double priceAfterDiscount = totalPrice - (totalPrice/100*percentDiscount);
 
         return priceAfterDiscount;
-    } 
+    }
+
+    public void addFoodToOrder(Food food, Integer amount) {
+        Integer amountAlreadyInOrder = foodItems.putIfAbsent(food, amount);
+
+        if (amountAlreadyInOrder == null) {
+            return;
+        }
+
+        foodItems.replace(food, amountAlreadyInOrder + amount);
+    }
 }

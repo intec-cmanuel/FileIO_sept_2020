@@ -8,11 +8,11 @@ public class Food {
     private double calori;
     private String brand;
 
-    public Food(String name/*, double price, double calori, String brand*/) {
+    public Food(String name, double price, double calori, String brand) {
         this.name = name;
-//        this.price = price;
-//        this.calori = calori;
-//        this.brand = brand;
+        this.price = price;
+        this.calori = calori;
+        this.brand = brand;
     }
 
     public String getName() {
@@ -46,8 +46,6 @@ public class Food {
     public void setBrand(String brand) {
         this.brand = brand;
     }
-
-    // TODO Override equals method.
 
     @Override
     public boolean equals(Object o) {

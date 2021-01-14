@@ -1,2 +1,0 @@
-pizza=2
-patat=3

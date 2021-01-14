@@ -1,1 +1,0 @@
-NOTENOUGHMONEY=Vous n'avez pas assez d'argent.

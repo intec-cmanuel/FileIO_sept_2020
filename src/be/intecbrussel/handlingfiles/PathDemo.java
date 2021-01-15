@@ -41,6 +41,6 @@ public class PathDemo {
 
         Files.move(Paths.get("resources/hello.txt"), fileToCopy);
 
-        Files.is
+
     }
 }

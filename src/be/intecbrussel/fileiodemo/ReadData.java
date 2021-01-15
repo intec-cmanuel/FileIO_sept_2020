@@ -1,6 +1,8 @@
 package be.intecbrussel.fileiodemo;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ReadData {
     public String readStringFromFile() {
@@ -40,5 +42,36 @@ public class ReadData {
             e.printStackTrace();
         }
 
+    }
+
+    //TODO Fix this potato mess
+    public List<Animal> readAllAnimalsFromFile() {
+        List<Animal> animalList = new ArrayList<>();
+        ObjectInputStream ois = null;
+
+        try {
+
+            File myObjectFile = new File("resources/MyObjectFile.txt");
+            FileInputStream fis = new FileInputStream(myObjectFile);
+            ois = new ObjectInputStream(fis);
+
+            while ( true ) {
+                animalList.add((Animal) ois.readObject());
+            }
+
+
+        } catch (EOFException e ) {
+            if (ois != null) {
+                try {
+                    ois.close();
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+            }
+        } catch (IOException | ClassNotFoundException ioe) {
+            ioe.printStackTrace();
+        }
+
+        return animalList;
     }
 }
